@@ -734,3 +734,49 @@ ul li {
 .link :hover{
   color: orange
 }
+
+
+/* *********************************************************************** */
+.admin{
+  text-align: center;
+}
+.control{
+  margin-top: 15px;
+  background-color: orange;
+  border-radius: 5px;
+}
+.control a{
+  text-decoration: none;
+  color: black;
+}
+/* *********************************************** */
+.addAccount{
+  background-color: orangered;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.tableUser{
+  margin-top: 25px;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  width: 500px;
+}
+
+/* ******************************/
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+
+/* **********************/
+.error{
+  background-color: #f7cdcd;
+  color: #A94442;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+

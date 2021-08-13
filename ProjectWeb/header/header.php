@@ -49,9 +49,9 @@
         </div>
         <div class="col-md-6 header-right">
             <ul class="header-menuRight">
-                <li><a href="#" class="menuRightItem">Cán bộ giảng viên</a></li>
+                <li><a href="login.php" class="menuRightItem">Cán bộ giảng viên</a></li>
                 <li>
-                    <a href="#" class="menuRightItem"> Sinh viên</a>
+                    <a href="login.php" class="menuRightItem"> Sinh viên</a>
                     <ul class="menuRight-level0">
                         <li><a href="#">Cổng thông tin đào taọ</a><hr></li>
                         <li><a href="#">Hoạt động sinh viên</a><hr></li>
