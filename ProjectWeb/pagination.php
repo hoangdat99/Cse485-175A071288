@@ -10,11 +10,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Trường Đại học Phenikaa</title>
+    <title>Document</title>
 </head>
 <body>
-    <?php include('./header/header.php') ?>
-    <?php include('./body/body.php') ?>
-    <?php include('./footer/footer.php') ?>
+<?php
+    for($num = 1; $num <= $totalPage; $num++){ ?>
+    <?php if($num != $current_page) { ?> 
+           <a class="page-item" href="?per_page=<?=$item_page?>&page=<?=$num?>"><?php echo $num?></a>
+    <?php } else {?>      
+         <strong class="current-page page-item"><?= $num?></strong>
+
+        <?php }?>
+<?php }?>
 </body>
 </html>

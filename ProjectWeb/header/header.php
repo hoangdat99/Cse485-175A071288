@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <div class="container-fluid">
     <div class="row header-top">
         <div class="col-md-6 header-left">
@@ -49,9 +52,9 @@
         </div>
         <div class="col-md-6 header-right">
             <ul class="header-menuRight">
-                <li><a href="login.php" class="menuRightItem">Cán bộ giảng viên</a></li>
+                <li><a href="#" class="menuRightItem">Cán bộ giảng viên</a></li>
                 <li>
-                    <a href="login.php" class="menuRightItem"> Sinh viên</a>
+                    <a href="#" class="menuRightItem"> Sinh viên</a>
                     <ul class="menuRight-level0">
                         <li><a href="#">Cổng thông tin đào taọ</a><hr></li>
                         <li><a href="#">Hoạt động sinh viên</a><hr></li>
@@ -62,6 +65,16 @@
                 <li><a href="#" class="menuRightItem"><i class="fas fa-search"></i></a></li>
                 <li><a href="#" class="menuRightItem"><img src="./images/vn.jpg" class="language"></a></li>
                 <li><a href="#" class="menuRightItem"><img src="./images/en.png" class="language"></a></li>
+                <button type="button" class="btn btn-secondary"><a href="login.php">
+                    <?Php
+                       
+                        if(isset($_SESSION['userName'])){
+                            echo $_SESSION['userName'];
+                        } else {
+                             echo "Login";
+                        }
+                    
+                    ?></a></button>
             </ul>
         </div>
     </div>
@@ -94,7 +107,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">Tin tức</a>
+                    <a href="news.php">Tin tức</a>
                         <ul class="menuRight-item-level1">
                             <li><a href="#">Tin tức - thông báo</a><hr></li>
                             <li><a href="#">Sự kiện</a><hr></li>

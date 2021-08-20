@@ -280,6 +280,124 @@
             <button class="more">Xem Thêm</button>
         </div> 
     </div>
+    <div class="container text-center font-weight-bold my-5">
+        <h3>PHENIKAA QUA NHỮNG CON SỐ</h3>
+    </div>
+  <!-- Thống kê -->
+  <div class="statistical ">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="imagesĐH/static1.gif">          
+        </div>
+        <div class="col-sm-4">
+          <img src="imagesĐH/static2.gif">
+        </div>
+        <div class="col-sm-4">
+          <img src="imagesĐH/static3.gif"> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="images-discover container">
+    <div class="text-center font-weight-bold my-5">
+      <h3>KHÁM PHÁ TRƯỜNG ĐẠI HỌC PHENIKAA</h3>
+    </div>
+      <div class="images-6">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <img class="img-fluid" src="imagesĐH/kham-pha-phenikaa-02.jpg" >
+          </div>
+          <div class="col-6 col-md-3">
+            <img class="img-fluid" src="imagesĐH/kham-pha-phenikaa-03.jpg">
+          </div>
+          <div class="col-12 col-md-6">
+            <img class="img-fluid" src="imagesĐH/kham-pha-phenikaa-04.jpg" width="520" height="345">
+          </div>
+        </div>
+
+        <div class="row my-3">                                   
+          <div class="col-md-9 mb-2">
+            <iframe width="840" height="485"
+              src="https://www.youtube.com/embed/watch?v=Qfc2lwNST54">
+            </iframe>
+          </div>
+          <div class="col-md-3">          
+            <div class="row">
+              <div class="col-6 col-md-12">
+                <img class="img-fluid" src="imagesĐH/kham-pha-phenikaa-05.jpg" width="235">
+              </div>
+              <div class="col-6 col-md-12 mt-3">
+                <img class="img-fluid" src="imagesĐH/kham-pha-phenikaa-06.jpg" width="235">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+  </div>  
+    <div class="links-connect"  style="background-color: whitesmoke;">
+      <div class="container">
+        <div class="row text-left py-4">
+          <div class="col-lg-3 col-xl-3">
+            <h4 class="footer title">Kết nối với chúng tôi</h4>
+          </div>
+          <div class="col-lg-3 col-xl-3">
+            <ul class="footer-links">
+              <li class="mb-4">
+                <span>
+                  <i class="fa4-facebook"></i>
+                  FACEBOOK
+                </span>
+                <p>
+                  <a href="http://facebook.com/Daihocphenikaa" class="text-reset font-weight-bold" target="_blank">
+                  facebook.com/
+                  <br>
+                  Daihocphenikaa
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-xl-3">
+            <ul class="footer-links">
+              <li class="mb-4">
+                <span>
+                  <i class="fa4-instagram"></i>
+                  INSTAGRAM
+                </span>
+                <p>
+                  <a href="http://instagram.com/phenikaa_uni" class="text-reset font-weight-bold" target="_blank">
+                  instagram.com/
+                  <br>
+                  phenikaa_uni
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-xl-3">
+            <ul class="footer-links">
+              <li class="mb-4">
+                <span>
+                  <i class="fa4-youtube"></i>
+                  YOUTUBE
+                </span>
+                <p>
+                  <a href="http://youtube.com/c/PhenikaaUniversity" class="text-reset font-weight-bold" target="_blank">
+                  youtube.com/c/
+                  <br>
+                  PhenikaaUniversity
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>  
+  </body>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

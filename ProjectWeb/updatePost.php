@@ -1,17 +1,29 @@
 <?php
  include ('connect.php');
+ $id=$_GET['updateid'];
+ $sql="SELECT * FROM `news` WHERE id=$id";
+ $result=mysqli_query($conn,$sql);
+ $row = mysqli_fetch_assoc($result);
+ $title = $row['title'];
+ $time = $row['setTime'];
+ $content = $row['content'];
+ $image = $row['image'];
+
  if(isset($_POST['submit'])){
-     $userName =$_POST['useName'] ;
-     $passWord = $_POST['passWord'];
-     $role =$_POST['role'] ;
-     $status = 0;
-     $sql = "INSERT INTO `users`(`useName`, `passWord`, `role`, `status`) VALUES ('$userName','$passWord','$role',$status) ";
+     $title =$_POST['title'] ;
+     $time =$_POST['time'] ;
+     $content =$_POST['content'] ;
+     $image =$_POST['image'] ;
+    
+     $sql ="UPDATE `news` SET id = '$id', title='$title',
+        setTime = '$time', content = '$content', image = '$image' WHERE id =$id";
       $result = mysqli_query($conn,$sql);
       if($result){
-           echo "Create new account successfully!";
-          header('location:account.php');
+        //   echo "Update account successfully!";
+          header('location:post.php');
       } else {
-        echo "loi";
+        //   die(mysqli_connect_error($conn));
+        echo ('loi');
       }
  }
 ?>
@@ -37,25 +49,27 @@
         <div class="card rounded-3">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img3.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Post</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtUserName">UserName</label>
-                <input type="text" id="txtUserName" class="form-control" name="useName" />
+                <label class="form-label" for="txtPost">Title</label>
+                <input type="text" id="txtPost" class="form-control" name="title" value=<?php echo $title; ?>>
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtPassWord">PassWord</label>
-                <input type="text" id="txtPassWord" class="form-control" name="passWord"/>
+                <label class="form-label" for="txtTime">Time</label>
+                <input type="date" id="txtTime" class="form-control" name="time" value=<?php echo $time; ?>>
               </div>
-              <div class="mb-4">
-                <select class="select" name="role">
-                  <option value="none" disabled>Role</option>
-                  <option value="admin">Admin</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student">Student</option>
-                </select>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="txtContent">Content</label>
+                <input type="text" id="txtContent" class="form-control" name="content" value=<?php echo $content; ?>>
               </div>
-              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Submit</button>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="txtImage">Image</label>
+                <input type="file" id="txtImage" class="form-control" name="image" >
+                    <img src="./images/"<?php echo $image; ?> alt="">
+                </input>
+              </div>
+              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Update</button>
             </form>
           </div>
         </div>

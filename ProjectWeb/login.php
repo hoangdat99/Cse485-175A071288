@@ -1,32 +1,72 @@
 <?php 
+  session_start();
   include('connect.php');
+  if(isset($_REQUEST['submit'])){
+    $userName = $_REQUEST['userName'];
+    $passWord = $_REQUEST['passWord'];
+    $role = $_REQUEST['role'];
+    $username = strip_tags($username);
+		$username = addslashes($username);
+		$password = strip_tags($password);
+		$password = addslashes($password);  
+    $sql = "SELECT * FROM users WHERE useName = '$userName' AND passWord='$passWord' ";
+    $result = mysqli_query($conn,$sql);
+    if (mysqli_num_rows($result) === 1){
+      $row = mysqli_fetch_assoc($result);  
+      $id = $row['id'];   
+      if($row['passWord'] === $passWord && $row['role']=='admin' && $role =='admin' && $row['status'] == 1){
+        $_SESSION['userName'] = $userName;
+        header('Location:admin.php');
+      }else if($row['passWord'] === $passWord && $row['role']=='teacher' && $role=='teacher' && $row['status'] == 1){
+        $_SESSION['userName'] = $userName;
+        header('Location:teacher.php');
+      }
+      else if($row['passWord'] === $passWord && $row['role']=='student' && $role=='student' && $row['status'] == 1){
+        $_SESSION['userName'] = $userName;
+        header('Location:sv.php');
+        } else if($row['passWord'] === $passWord && $row['status'] == 0){
+          $_SESSION['id'] = $id;
+          header('Location:createInfo.php');
+        }
+    }
+  }
 ?>
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="./styleLogin/style.css">
-<section class="login-block">
+<link rel="stylesheet" href="./styleLogin/style.css"> 
+ <section class="login-block">
     <div class="container">
 	<div class="row">
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
-		    <form class="login-form" action="admin.php" method="post">
-          <?php if(isset($_GET['error'])){ ?> <p class="error"><?php echo $_GET['error']; ?></p><?php };?>
+        <?php if (isset($_GET['error'])) { ?>
+      	      <div class="alert alert-danger" role="alert">
+				  <?=$_GET['error']?>
+			  </div>
+			  <?php } ?>
+		    <form class="login-form" action="login.php" method="POST">
           <div class="form-group">
-            <label for="exampleInputEmail1" class="text-uppercase" name="userName">Username</label>
-            <input type="text" class="form-control" placeholder="">
+            <label for="exampleInputEmail1" class="text-uppercase" >Username</label>
+            <input type="text" class="form-control"  name="userName">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1" class="text-uppercase" name="passWord">Password</label>
-            <input type="password" class="form-control" placeholder="">
+            <label for="exampleInputPassword1" class="text-uppercase" >Password</label>
+            <input type="password" class="form-control"name="passWord">
           </div>
+          <div class="mb-1">
+            <label for="">Select your type:</label>
+          </div>
+          <div class="mb-4">
+                <select class="select" name="role">
+                  <option value="none" disabled>Your type</option>
+                  <option value="admin">Admin</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+                </select>
+              </div>
             <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input">
-              <small>Remember Me</small>
-            </label>
-            <button type="submit" class="btn btn-login float-right">Submit</button>
+            <button type="submit" name="submit" class="btn btn-login float-right">Submit</button>
           </div>
           
         </form>
@@ -49,3 +89,4 @@
 	</div>
 </div>
 </section>
+

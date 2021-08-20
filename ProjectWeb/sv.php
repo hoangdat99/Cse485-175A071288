@@ -10,11 +10,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Trường Đại học Phenikaa</title>
+    <title>Document</title>
 </head>
 <body>
-    <?php include('./header/header.php') ?>
-    <?php include('./body/body.php') ?>
-    <?php include('./footer/footer.php') ?>
+   <?php include('./header/header.php')?>
 </body>
 </html>

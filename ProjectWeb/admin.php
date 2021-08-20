@@ -1,27 +1,3 @@
-<?php 
-    if(isset($_POST['userName']) && isset($_POST['passWord'])){
-        function validate($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-        $userName = validate($_POST['userName']);  
-        $passWord = validate($_POST['passWord']);  
-
-        if(empty($userName)){
-
-            exit();
-        } else if(empty($passWord)){
-
-        } else "Vali";
-    }else{
-        header("Location: index.php");
-        exit();
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,19 +17,28 @@
         <?php include('./header/header.php') ?>
         <div class="container-fluid">
             <div class="row admin">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <button class="control" >
                         <a href="account.php">Quản lý tài khoản</a>
                     </button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <button class="control">
-                        Quản lý bài viết
+                    <a href="post.php">Quản lý bài viết</a>
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="control">
+                        Quản lý môn học
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="control" >
+                        <a href="logout.php">LogOut</a>
                     </button>
                 </div>
             </div>    
         </div>
-
         <!-- ** footer** -->
 </body>
 </html>

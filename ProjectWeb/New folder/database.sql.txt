@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 20, 2021 lúc 10:18 AM
+-- Thời gian đã tạo: Th8 14, 2021 lúc 02:56 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -42,10 +42,8 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `fullName`, `email`, `Code`, `image`, `phoneNumber`, `id_user`) VALUES
-(1, 'HoàngĐạt', 'hoangdatk95@gmail.com', 'HKGH777', 'des.jpg', '0917493396', 1),
-(6, 'Hoàng Đạt', 'nnga11340@gmail.com', '346145', 'imgEvent4.jpg', '0917493396', 2),
-(7, 'Hoàng Đạt', 'mrteenteen@yahoo.com.vn', 'HKGH999', 'imgEvent5.jpg', '0917493396', 14),
-(8, 'Hoàng Đạt', 'nnga11340@gmail.com', 'e8f9e4bgjihbg8gg', 'imgNotification1.jpg', '0917493396', 16);
+(1, 'Mr.Admin', '', '', NULL, '0123456', 1),
+(2, 'Hoàng Đạt', 'hoangdatk95@gmail.com', 'HKGH777', 'des.jpg', '0917493396', 1);
 
 -- --------------------------------------------------------
 
@@ -59,7 +57,6 @@ CREATE TABLE `news` (
   `setTime` date DEFAULT NULL,
   `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -67,13 +64,12 @@ CREATE TABLE `news` (
 -- Đang đổ dữ liệu cho bảng `news`
 --
 
-INSERT INTO `news` (`id`, `title`, `setTime`, `content`, `image`, `status`, `user_id`) VALUES
-(1, 'Trường Đại học Phenikaa công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy theo phương thức xét điểm thi tốt nghiệp THPT năm 2021', '2021-08-17', 'Hội đồng Tuyển sinh Trường Đại học Phenikaa (PKA) công bố ngưỡng điểm nhận hồ sơ đăng ký xét tuyển (điểm sàn) đại học hệ chính quy năm 2021 vào từng ngành/chương trình theo phương thức xét điểm thi tốt nghiệp Trung học phổ thông', 'des.jpg', 0, 1),
-(9, 'Hội nhập thế giới2', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(10, 'Hội nhập thế giới3]', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(11, 'Hội nhập thế giới4', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(12, 'Hội nhập thế giới5', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(13, 'Hội nhập thế giới6', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1);
+INSERT INTO `news` (`id`, `title`, `setTime`, `content`, `image`, `user_id`) VALUES
+(1, 'tiêu đề 1', '0000-00-00', 'Đây là nội dung 1', '', 1),
+(2, 'tiêu đề 2', '0000-00-00', 'Đây là nội dung 2', '', 3),
+(3, 'tiêu đề 3', '0000-00-00', 'Đây là nội dung 2', '', 2),
+(4, 'tiêu đề 4', '0000-00-00', 'Đây là nội dung 4', '', 3),
+(5, 'tiêu đề 5', '0000-00-00', 'Đây là nội dung 2', '', 1);
 
 -- --------------------------------------------------------
 
@@ -88,13 +84,6 @@ CREATE TABLE `scores` (
   `id_user` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `scores`
---
-
-INSERT INTO `scores` (`id`, `score`, `id_subject`, `id_user`) VALUES
-(1, 9, 1, 14);
-
 -- --------------------------------------------------------
 
 --
@@ -105,13 +94,6 @@ CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `nameSubject` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `subjects`
---
-
-INSERT INTO `subjects` (`id`, `nameSubject`) VALUES
-(1, 'Math');
 
 -- --------------------------------------------------------
 
@@ -133,10 +115,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `useName`, `passWord`, `role`, `status`) VALUES
 (1, 'admin', 'admin', 'admin', 1),
-(2, 'user1', '123456', 'admin', 1),
+(2, 'user1', '123456', 'admin', 0),
 (3, 'user2', '123457', 'teacher', 1),
-(14, 'hocsinh12', '123456', 'Student', 1),
-(16, 'user3', '123456', 'student', 1);
+(4, 'beatk99', '123456', 'teacher', 1),
+(13, 'hocsinh1', '123456', 'student', 1);
 
 -- --------------------------------------------------------
 
@@ -203,31 +185,31 @@ ALTER TABLE `work`
 -- AUTO_INCREMENT cho bảng `info`
 --
 ALTER TABLE `info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `work`

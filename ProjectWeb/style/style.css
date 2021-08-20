@@ -780,3 +780,124 @@ ul li {
   margin: 20px auto;
 }
 
+/* *******style info********* */
+.infoAccount{
+  display: inline-grid;
+}
+/***************style for news***********************/
+
+.path{
+  display: contents;
+}
+.path h5 {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.path p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+.paths{
+  height: 48px;
+  background-color: #eeeeee;
+}
+.titleMainNews{
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.mainNews{
+  margin-left: 40px;
+  margin-top: 20px;
+}
+.mainNewsLeft{
+  background-color: whitesmoke;
+  height: auto;
+}
+.mainNewsRight{
+  height: auto;
+  margin-right: 50px;
+  margin-left: 25px;
+}
+.hrNews{
+  display: flex;
+  width: 100%;
+  margin-left: 15px;
+}
+.hrNews1{
+  width: 8%;
+  height: 1px;
+  background-color: orangered;
+}
+.hrNews2{
+  width: 92%;
+  height: 2px;
+}
+
+.contentMainNewsLeft{
+  background-color: greenyellow;
+  height: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.imageMainNews{
+  width: 95%;
+  height: 100%;
+}
+.imageLeftMainNews{
+  padding-left: 0px;
+}
+.time-title{
+  margin-top: 10px;
+  height:auto;
+  border-left: 1px solid orangered;
+}
+.time-title p {
+  margin-left: 15px;
+  margin-bottom: 2px;
+}
+.time-title h6 {
+  margin-left: 10px;
+}
+.time-title .p1{
+  color: orange;
+  font-size: 17px;
+  font-weight: bold;
+}
+.content-MainNews{
+  font-size: 13px;
+  margin-left: 10px;
+}
+.ctn-mainNews{
+  height: auto;
+}
+.ulMainNews{
+  padding-left: 0px;
+}
+.liMainNews{
+height: 35px;
+background-color: #c4c4c4;
+margin-bottom: 15px;
+}
+.mainNewsRight{
+  padding-left: 0px;
+}
+.titleMainNewsRight{
+  margin-top: 20px;
+}
+.hrNewsRight{
+  display: flex;
+  width: 100%;
+}
+.fa-hand-point-right{
+  margin-right: 5px;
+  color: rgb(247, 109, 29);
+  margin-left: 5px;
+}
+.liMainNews a{
+  color: black;
+}
+
+/* **********************/

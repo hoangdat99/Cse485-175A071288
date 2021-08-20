@@ -1,7 +1,6 @@
 <?php 
-    include('connect.php')
+    include('connect.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,18 +20,25 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <button class="addAccount">
                     <a href="newAccount.php" class="text-decoration-none">Thêm Tài Khoản</a>
                 </button>
             </div>
+            <div class="col-md-6">
+                <button class="addAccount">
+                    <a href="admin.php" class="text-decoration-none">Home Admin</a>
+                </button>
+            </div>
         </div>
+        
 <table class="table">
     <thead>
         <tr>
         <th scope="col">Id</th>
         <th scope="col">UseName</th>
         <th scope="col">PassWord</th>
+        <th scope ="col">Active</th>
         <th scope="col">Role</th>
         <th scope="col">Action</th>
         </tr>
@@ -46,15 +52,18 @@
                    $id = $row['id'];
                    $useName = $row['useName'];
                    $passWord = $row['passWord'];
+                   $status = $row['status'];
                    $role = $row['role'];
                    echo '<tr>
                         <td>'.$id.'</td>
                         <td>'.$useName.'</td>
                         <td>'.$passWord.'</td>
+                        <td>'.$status.'</td>
                         <td>'.$role.'</td>
                         <td>
-                        <button class="btn btn-primary"><a href="updateAccount.php ? updateid='.$id.'" class="text-light">Update</a></button>
+                        <button class="btn btn-primary"><a href="updateAccount.php ? updateid='.$id.'" class="text-light">Edit</a></button>
                         <button class="btn btn-danger"><a href="deleteAccount.php ? deleteid='.$id.' " class="text-light">Delete</a></button>
+                        <button class="btn btn-primary"><a href="showInfo.php ? infoid='.$id.' " class="text-light">ShowInfo</a></button>                  
                     </td>
                    </tr>';
                }

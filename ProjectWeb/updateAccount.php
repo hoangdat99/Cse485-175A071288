@@ -50,7 +50,7 @@
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <input type="text" id="txtUserName" class="form-control" name="useName" value=<?php echo $userName; ?> />
+                <input type="text" id="txtUserName" class="form-control" name="useName" value=<?php echo $userName; ?>>
                 <label class="form-label" for="txtUserName">UserName</label>
               </div>
               <div class="form-outline mb-4">
