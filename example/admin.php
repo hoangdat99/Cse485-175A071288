@@ -24,28 +24,6 @@
                     <a href="add.php">Thêm mới</a>
                 </button>
             </div>
-            <div class="col-md-4">
-                <form action="" method="GET">
-                    <label for="" class="form-label">Unit: </label>
-                    <select class="select" name="unit" value="unit">
-                        <option value="none" disable></option>
-                        <?php 
-                            session_start();
-                            $sql = "SELECT * FROM `unit`";
-                            $result = mysqli_query($conn,$sql);
-                            if($result){
-                                while( $row = mysqli_fetch_assoc($result)){
-                                    $nameUnit = $row['name'];
-                                    $idUnit = $row['id'];
-                                    $_SESSION['nameUnit']=$nameUnit;
-                                    $_SESSION['idUnit']=$idUnit;
-                                    echo '
-                                        <option value="'.$idUnit.'">'.$nameUnit.'</option>';
-                        }}?>
-                    </select>
-                    <button type="submit" name="submit">Choose</button>
-                </form>
-            </div>
             <div class="col-md-3">
                 <button>
                     <a href="logout.php">Logout</a>

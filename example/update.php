@@ -24,15 +24,15 @@ session_start();
             $email = $_POST['email'];
             $phone = $_POST['phonePerson'];
             $address = $_POST['address'];
-        $sql1 ="UPDATE `person` INNER JOIN `unit` SET id = '$id', fullName='$fullName',
-           position = '$position', workPhone = '$workPhone', email = $email, phonePerson = $phone, id_unit= $idUnit ";
+        $sql1 ="UPDATE `person` SET  fullName='$fullName',
+           position = '$position', workPhone = '$workPhone', email = '$email', phonePerson = '$phone', id_unit= '$idUnit' WHERE idPerson = '$id' ";
          $result1 = mysqli_query($conn,$sql1);
          if($result1){
            //   echo "Update account successfully!";
-             header('location:account.php');
+             header('location:admin.php');
          } else {
            //   die(mysqli_connect_error($conn));
-           echo ('loi');
+          echo ("loi");
          }
     }
 ?>
@@ -73,7 +73,7 @@ session_start();
                 <select class="select" name="unit" value=<?php echo $unit;?>>
                   <?php
                         session_start();
-                        $sql = "SELECT * FROM `person` INNER JOIN `unit` WHERE person.id_unit = unit.id ";
+                        $sql = "SELECT * FROM `unit`";
                         $result = mysqli_query($conn,$sql);
                         if($result){
                             while( $row = mysqli_fetch_assoc($result)){
