@@ -1,7 +1,6 @@
 <?php
     session_start();
     include('connect.php');
-    $name=$_SESSION['name'];
     $id = $_SESSION['id'];
     if(isset($_POST['submit'])){
             $fullName = $_POST['fullName'];
@@ -13,7 +12,7 @@
         $sql = "INSERT INTO `person`(`fullName`, `position`, `workPhone`, `email`, `phonePerson`, `id_unit`) VALUES ('$fullName','$position','$workPhone','$email','$phone','$id') ";
         $result = mysqli_query($conn,$sql);
         if($result){
-            echo " successfully!";
+            header('location:admin.php');
         }else{
             echo "error!";
         }
