@@ -5,9 +5,9 @@
     $userName = $_REQUEST['userName'];
     $passWord = $_REQUEST['passWord'];
     $username = strip_tags($username);
-	$username = addslashes($username);
-	$password = strip_tags($password);
-	$password = addslashes($password);  
+	  $username = addslashes($username);
+	  $password = strip_tags($password);
+	  $password = addslashes($password);  
     $sql = "SELECT * FROM users WHERE userName = '$userName' AND passWord='$passWord' ";
     $result = mysqli_query($conn,$sql);
     if (mysqli_num_rows($result) === 1){

@@ -66,73 +66,7 @@
         <th scope="col">Work Address</th>
         </tr>
     </thead>
-    <tbody>
-    <?php 
-        if(isset($_REQUEST['submit'])){
-            $unit = $_GET['unit'];
-            if(empty($uint)){
-                $sql = "SELECT * FROM `person` INNER JOIN `unit` WHERE person.id_unit = unit.id;";
-                $result = mysqli_query($conn,$sql);
-                if($result){
-                   while( $row = mysqli_fetch_assoc($result)){
-                       $id = $row['idPerson'];
-                       $name = $row['fullName'];
-                       $position = $row['position'];
-                       $unit = $row['name'];
-                       $workPhone = $row['workPhone'];
-                       $email = $row['email'];
-                       $phone = $row['phonePerson'];
-                       $address = $row['address'];
-                       echo '<tr>
-                            <td>'.$id.'</td>
-                            <td>'.$name.'</td>
-                            <td>'.$position.'</td>
-                            <td>'.$unit.'</td>
-                            <td>'.$workPhone.'</td>
-                            <td>'.$email.'</td>
-                            <td>'.$phone.'</td>
-                            <td>'.$address.'</td>
-                            <td>
-                            <button class="btn btn-primary"><a href="update.php ? updateid='.$id.'" class="text-light">Edit</a></button>
-                            <button class="btn btn-danger"><a href="deleteAccount.php  " class="text-light">Delete</a></button>
-                        </td>
-                       </tr>';
-                   }
-                }         
-            } else{
-                $nameUnit = $_SESSION['nameUnit'];
-                $idUnit =  $_SESSION['idUnit'];
-                $sql = "SELECT * FROM `person` INNER JOIN `unit` WHERE person.id_unit = unit.id AND unit.id=$idUnit";
-                $result = mysqli_query($conn,$sql);
-                if($result){
-                   while( $row = mysqli_fetch_assoc($result)){
-                       $id = $row['idPerson'];
-                       $name = $row['fullName'];
-                       $position = $row['position'];
-                       $unit = $row['name'];
-                       $workPhone = $row['workPhone'];
-                       $email = $row['email'];
-                       $phone = $row['phonePerson'];
-                       $address = $row['address'];
-                       echo '<tr>
-                            <td>'.$id.'</td>
-                            <td>'.$name.'</td>
-                            <td>'.$position.'</td>
-                            <td>'.$unit.'</td>
-                            <td>'.$workPhone.'</td>
-                            <td>'.$email.'</td>
-                            <td>'.$phone.'</td>
-                            <td>'.$address.'</td>
-                            <td>
-                            <button class="btn btn-primary"><a href="update.php ? updateid='.$id.'" class="text-light">Edit</a></button>
-                            <button class="btn btn-danger"><a href="deleteAccount.php  " class="text-light">Delete</a></button>
-                        </td>
-                       </tr>';
-                   }
-                }         
-            }
-        }
-    ?>
+    <tbody> 
         <?php 
             $sql = "SELECT * FROM `person` INNER JOIN `unit` WHERE person.id_unit = unit.id;";
             $result = mysqli_query($conn,$sql);
@@ -157,12 +91,12 @@
                         <td>'.$address.'</td>
                         <td>
                         <button class="btn btn-primary"><a href="update.php ? updateid='.$id.'" class="text-light">Edit</a></button>
-                        <button class="btn btn-danger"><a href="deleteAccount.php  " class="text-light">Delete</a></button>
+                        <button class="btn btn-danger"><a href="delete.php ? deleteid='.$id.' " class="text-light">Delete</a></button>
                     </td>
                    </tr>';
                }
             }         
-        ?>    
+        ?>     
     </tbody>
 </table>
 </body>

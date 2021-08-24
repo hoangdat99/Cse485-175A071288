@@ -24,10 +24,10 @@ session_start();
             $email = $_POST['email'];
             $phone = $_POST['phonePerson'];
             $address = $_POST['address'];
-        $sql ="UPDATE `person` SET id = '$id', fullName='$fullName',
+        $sql1 ="UPDATE `person` INNER JOIN `unit` SET id = '$id', fullName='$fullName',
            position = '$position', workPhone = '$workPhone', email = $email, phonePerson = $phone, id_unit= $idUnit ";
-         $result = mysqli_query($conn,$sql);
-         if($result){
+         $result1 = mysqli_query($conn,$sql1);
+         if($result1){
            //   echo "Update account successfully!";
              header('location:account.php');
          } else {
@@ -62,7 +62,7 @@ session_start();
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtFullName">FullName</label>
-                <input type="text" id="txtFullName" class="form-control" name="fullName" value=<?php echo $name; ?>>
+                <input type="text" id="txtFullName" class="form-control" name="fullName" value=<?php echo $fullName; ?>>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtPosition">Position</label>
@@ -73,7 +73,7 @@ session_start();
                 <select class="select" name="unit" value=<?php echo $unit;?>>
                   <?php
                         session_start();
-                        $sql = "SELECT * FROM `unit`";
+                        $sql = "SELECT * FROM `person` INNER JOIN `unit` WHERE person.id_unit = unit.id ";
                         $result = mysqli_query($conn,$sql);
                         if($result){
                             while( $row = mysqli_fetch_assoc($result)){
