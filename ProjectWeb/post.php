@@ -61,7 +61,10 @@
                         <td>'.$time.'</td>
                         <td>'.$content.'</td>
                         <td><img src="./images/'.$image.'" style="width:150px; height:80px"/></td>
-                        <td><button class="btn btn-danger">'.$status.'</button></td>
+                        <td>
+                            <button class="btn btn-primary"><a href="status.php ? statusid='.$id.' " class="text-light">'.$status.'</button>
+                            <button class="btn btn-primary"><a href="drop.php ? statusid='.$id.' " class="text-light">Drop</button>
+                            </td>
                         <td>
                             <button class="btn btn-primary"><a href="updatePost.php ? updateid='.$id.'" class="text-light">Edit</a></button>
                             <button class="btn btn-danger"><a href="deletePost.php ? deleteid='.$id.' " class="text-light">Delete</a></button>

@@ -26,7 +26,6 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role
         
         $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $result = mysqli_query($conn, $sql);
-
         if (mysqli_num_rows($result) === 1) {
         	// the user name must be unique
         	$row = mysqli_fetch_assoc($result);

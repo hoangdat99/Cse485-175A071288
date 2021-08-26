@@ -33,9 +33,9 @@
                 </div>
                 <?php 
                     $item_page = !empty($_GET['per_page'])?$_GET['per_page']:3;
-                    $current_page = !empty($_GET['page'])?$_GET['page']:0;
+                    $current_page = !empty($_GET['page'])?$_GET['page']:1;
                     $offset = ($current_page -1) * $item_page;
-                    $sql = "SELECT * FROM `news` ORDER BY `id` DESC LIMIT ".$item_page." OFFSET ".$offset."";
+                    $sql = "SELECT * FROM `news` WHERE status =1 ORDER BY `id` DESC LIMIT ".$item_page." OFFSET ".$offset."";
                     $totalRecord = mysqli_query($conn, "SELECT * FROM `news`");
                     $totalRecord = $totalRecord->num_rows;
                     $totalPage = ceil($totalRecord/$item_page);

@@ -14,5 +14,8 @@
 </head>
 <body>
    <?php include('./header/header.php')?>
+   <button>
+       <a href="logout.php">LogOut</a>
+   </button>
 </body>
 </html>
