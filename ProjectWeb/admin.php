@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-3">
                     <button class="control">
-                        Quản lý môn học
+                       <a href="subject.php"> Quản lý môn học</a>
                     </button>
                 </div>
                 <div class="col-md-3">

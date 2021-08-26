@@ -11,7 +11,10 @@
         $sql = "INSERT INTO `news`(`title`, `setTime`, `content`, `image`, `status`, `user_id`) VALUES ('$title','$time','$content','$image','$status','$id') ";
         $result = mysqli_query($conn,$sql);
         if($result){
-            echo " successfully!";
+          echo '<script language="javascript">';
+          echo 'alert(" successfully!")';
+          echo '</script>';
+          header('location:post.php');
         }else{
             echo "error!";
         }
@@ -44,7 +47,7 @@
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtTitle">Title</label>
-                <input type="text" id="txtTitle" class="form-control" name="title" />
+                <textarea rows="3" type="text" id="txtTitle" class="form-control" name="title"></textarea>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtTime">Time</label>
@@ -52,7 +55,7 @@
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtContent">Content</label>
-                <input type="text" id="txtContent" class="form-control" name="content"/>
+                <textarea rows="6" type="text" id="txtContent" class="form-control" name="content"></textarea>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtImage">Image</label>

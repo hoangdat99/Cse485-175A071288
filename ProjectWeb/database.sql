@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 20, 2021 lúc 10:18 AM
+-- Thời gian đã tạo: Th8 26, 2021 lúc 11:04 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -68,12 +68,13 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `setTime`, `content`, `image`, `status`, `user_id`) VALUES
-(1, 'Trường Đại học Phenikaa công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy theo phương thức xét điểm thi tốt nghiệp THPT năm 2021', '2021-08-17', 'Hội đồng Tuyển sinh Trường Đại học Phenikaa (PKA) công bố ngưỡng điểm nhận hồ sơ đăng ký xét tuyển (điểm sàn) đại học hệ chính quy năm 2021 vào từng ngành/chương trình theo phương thức xét điểm thi tốt nghiệp Trung học phổ thông', 'des.jpg', 0, 1),
-(9, 'Hội nhập thế giới2', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(10, 'Hội nhập thế giới3]', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(11, 'Hội nhập thế giới4', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(12, 'Hội nhập thế giới5', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(13, 'Hội nhập thế giới6', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1);
+(1, 'Công thức và cách tính điểm xét tốt nghiệp THPT 2021 nhanh nhất, chính xác nhất', '2021-08-17', 'Bao nhiêu điểm thì đậu tốt nghiệp THPT và cách tính điểm xét tuyển như thế nào là câu hỏi được 2k3 quan tâm lúc này! Trường Đại học Phenikaa hướng dẫn thí sính cách tính điểm xét tốt nghiệp THPT 2021 cũng như một số điều kiện cần để được xét tốt nghiệp nă', 'news9.jpg', 1, 1),
+(9, 'Thí sinh cần làm gì sau khi biết điểm thi tốt nghiệp THPT?', '2021-08-17', 'Hôm nay (26.7), các địa phương công bố kết quả thi tốt nghiệp THPT đợt 1 của gần 1 triệu thí sinh cả nước. Kết quả kỳ thi này vừa được dùng để xét công nhận tốt nghiệp, vừa xét tuyển vào các trường ĐH và CĐ.', 'thumbnail3.jpg', 1, 1),
+(10, 'Thông báo nhập học đợt 1 năm 2021', '2021-08-20', 'Thí sinh đã đạt kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và kết quả học tập bậc THPT (học bạ) đợt 1 năm 2021.', 'imgNotification4.jpg', 0, 1),
+(11, 'Trường Đại học Phenikaa nhận hồ sơ xét tuyển học bạ đợt 2 năm 2021', '2021-08-17', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo nhận hồ sơ xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức kết quả học tập bậc THPT (Học bạ) đợt 2 năm 2021 như sau:', 'news2.jpg', 0, 1),
+(12, 'Trường Đại học Phenikaa công bố kết quả xét tuyển đợt 2 năm 2021 theo phương thức xét tuyển kết quả học tập THPT (học bạ)', '2021-08-17', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và theo phương thức kết quả học tập bậc THPT (Học bạ)', 'news13.jpg', 0, 1),
+(13, 'Công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy theo phương thức xét điểm thi tốt nghiệp THPT năm 2021', '2021-08-17', 'Hội đồng Tuyển sinh Trường Đại học Phenikaa (PKA) công bố ngưỡng điểm nhận hồ sơ đăng ký xét tuyển (điểm sàn) đại học hệ chính quy năm 2021 vào từng ngành/chương trình theo phương thức xét điểm thi tốt nghiệp Trung học phổ thông (THPT) năm 2021 như sau:', 'imgNotification2.jpg', 1, 1),
+(14, 'Tuổi trẻ hôm nay', '2021-08-26', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và theo phương thức kết quả học tập bậc THPT (Học bạ)', 'imgEvent5.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,8 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `nameSubject`) VALUES
-(1, 'Math');
+(1, 'Math 3'),
+(4, 'English 3');
 
 -- --------------------------------------------------------
 
@@ -209,7 +211,7 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `scores`
@@ -221,13 +223,13 @@ ALTER TABLE `scores`
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `work`

@@ -28,7 +28,7 @@
  }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,15 +53,19 @@
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtPost">Title</label>
-                <input type="text" id="txtPost" class="form-control" name="title" value=<?php echo $title; ?>>
+                <?php
+                  echo "<textarea rows=\"3\" type=\"text\" id=\"txtPost\" class=\"form-control\" name=\"title\">$title</textarea";
+                ?>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtTime">Time</label>
-                <input type="date" id="txtTime" class="form-control" name="time" value=<?php echo $time; ?>>
+                <input type="date" id="txtTime" class="form-control" name="time" value=<?php  echo json_encode($time); ?>>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtContent">Content</label>
-                <input type="text" id="txtContent" class="form-control" name="content" value=<?php echo $content; ?>>
+                <?php
+                   echo "<textarea rows=\"6\" type=\"text\" id=\"txtContent\" class=\"form-control\" name=\"content\">$content</textarea>";
+                ?> 
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtImage">Image</label>

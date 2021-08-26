@@ -56,7 +56,7 @@
                 <label class="form-label" for="txtPhone">Phone : </label>
                 <label>'.$phone.'</label>
               </div><br>
-              <button class="btn btn-primary"><a href="updateInfo.php ? infoid='.$id.' " class="text-light">Edit</a></button>;                        
+              <button class="btn btn-primary"><a href="updateInfo.php ? infoid='.$id.' " class="text-light">Edit</a></button>                    
             </form>
           </div>
         </div>

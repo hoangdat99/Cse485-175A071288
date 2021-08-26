@@ -53,15 +53,17 @@
             <form class="px-md-2" method="post" >
               <div class="form-outline mb-4">
               <label class="form-label" for="txtFullName">FullName</label>
-                <input type="text" id="txtFullName" class="form-control" name="fullName" value=<?php echo $fullName; ?>>
+              <?php
+                echo  "<input type=\"text\" id=\"txtFullName\" class=\"form-control\" name=\"fullName\" value=\"$fullName\">";
+              ?>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtEmail">Email</label>
-                <input type="email" id="txtEmail" class="form-control" name="email" value=<?php echo $email; ?> >
+                <input type="email" id="txtEmail" class="form-control" name="email" value=<?php  echo json_encode($email); ?> >
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtCode">Code</label>
-                <input type="text" id="txtCode" class="form-control" name="code" value=<?php echo $code; ?>>
+                <input type="text" id="txtCode" class="form-control" name="code" value=<?php  echo json_encode($code); ?>>
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtImage">Image</label>
@@ -69,7 +71,7 @@
               </div>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtPhone">Phone</label>
-                <input type="text" id="txtPhone" class="form-control" name="phone" value=<?php echo $phone; ?>>
+                <input type="text" id="txtPhone" class="form-control" name="phone" value=<?php  echo json_encode($phone); ?>>
               </div> 
                <button class="btn btn-primary" name="submit"><a href="account.php" class="text-light">Submit</a></button>
             </form>

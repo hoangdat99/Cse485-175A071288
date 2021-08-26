@@ -1,25 +1,21 @@
 <?php
  include ('connect.php');
  $id=$_GET['updateid'];
- $sql="SELECT * FROM `users` WHERE id=$id";
+ $sql="SELECT * FROM `subjects` WHERE id=$id";
  $result=mysqli_query($conn,$sql);
  $row = mysqli_fetch_assoc($result);
- $userName = $row['useName'];
- $passWord = $row['passWord'];
- $role = $row['role'];
-
+ $nameSubject = $row['nameSubject'];
  if(isset($_POST['submit'])){
-     $userName =$_POST['useName'] ;
-     $passWord = $_POST['passWord'];
-     $role =$_POST['role'] ;
-     $status = true;
-     $sql ="UPDATE `users` SET id = '$id', useName='$userName',
-        passWord = '$passWord', role = '$role' WHERE id =$id";
+     $nameSubject =$_POST['nameSubject'] ;
+     $sql ="UPDATE `subjects` SET nameSubject='$nameSubject' WHERE id = '$id'";
       $result = mysqli_query($conn,$sql);
       if($result){
-          header('location:account.php');
+        echo '<script language="javascript">';
+        echo 'alert(" successfully!")';
+        echo '</script>';
+        header('location:subject.php');
       } else {
-        echo ('loi');
+        echo ('loi'); 
       }
  }
 ?>
@@ -45,23 +41,13 @@
         <div class="card rounded-3">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img3.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Subject Info</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <input type="text" id="txtUserName" class="form-control" name="useName" value=<?php echo  json_encode($userName); ?>>
-                <label class="form-label" for="txtUserName">UserName</label>
-              </div>
-              <div class="form-outline mb-4">
-                <input type="text" id="txtPassWord" class="form-control" name="passWord" value=<?php echo  json_encode($passWord);?>>
-                <label class="form-label" for="txtPassWord">PassWord</label>
-              </div>
-              <div class="mb-4">
-                <select class="select" name="role" value=<?php echo $role; ?>>
-                  <option value="none" disabled>Role</option>
-                  <option value="Admin">Admin</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Student">Student</option>
-                </select>
+                <label class="form-label" for="txtNameSubject">Subject</label>
+                <?php
+                   echo "<input type=\"text\" id=\"txtNameSubject\" class=\"form-control\" name=\"nameSubject\" value=\"$nameSubject\">";
+                ?> 
               </div>
               <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Update</button>
             </form>
