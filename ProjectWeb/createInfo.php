@@ -36,7 +36,7 @@
     <title>Create Information</title>
 </head>
 <body>
-<?php 
+    <?php 
         include('./header/header.php')
     ?>
     <section class="h-100 h-custom" style="background-color: #8fc4b7;">

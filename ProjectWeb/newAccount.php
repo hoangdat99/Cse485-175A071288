@@ -1,18 +1,30 @@
 <?php
+session_start();
  include ('connect.php');
  if(isset($_POST['submit'])){
      $userName =$_POST['useName'] ;
      $passWord = $_POST['passWord'];
      $role =$_POST['role'] ;
      $status = 0;
-     $sql = "INSERT INTO `users`(`useName`, `passWord`, `role`, `status`) VALUES ('$userName','$passWord','$role',$status) ";
-      $result = mysqli_query($conn,$sql);
-      if($result){
-           echo "Create new account successfully!";
-          header('location:account.php');
+     if(empty($userName)){
+       header('location:newAccount.php?error=User Name is required!');
+     }  else if(empty($passWord)){
+         header('location:newAccount.php?error=Password is required!');
+     } else {
+       $sql = "SELECT * FROM `users` WHERE useName = '$userName'";
+       $result = mysqli_query($conn,$sql);
+      if(mysqli_num_rows($result)>0){
+        header('location:newAccount.php?error=User Name already exists!');
       } else {
-        echo "loi";
+           $sql = "INSERT INTO `users`(`useName`, `passWord`, `role`, `status`) VALUES ('$userName','$passWord','$role',$status) ";
+           if(mysqli_query($conn,$sql)){
+              $_SESSION['status'] = "Created account successfully!";
+              header('location:account.php');
+            } else {
+              echo "loi";
+            }
       }
+     }   
  }
 ?>
 <!DOCTYPE html>
@@ -39,6 +51,11 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
             <form class="px-md-2" method="post">
+            <?php if(isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_GET['error']; ?>
+                </div>
+              <?php } ?>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtUserName">UserName</label>
                 <input type="text" id="txtUserName" class="form-control" name="useName" />

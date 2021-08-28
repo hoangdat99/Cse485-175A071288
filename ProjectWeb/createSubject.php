@@ -1,17 +1,25 @@
 <?php
+  session_start();
  include ('connect.php');
  if(isset($_POST['submit'])){
      $nameSubject =$_POST['nameSubject'] ;
-     $sql = "INSERT INTO `subjects`(`nameSubject`) VALUES ('$nameSubject') ";
-      $result = mysqli_query($conn,$sql);
-      if($result){
-        echo '<script language="javascript">';
-        echo 'alert(" successfully!")';
-        echo '</script>';
-        header('location:subject.php');
-      } else {
-        echo "loi";
-      }
+     if(empty($nameSubject)){
+       header('location:createSubject.php?error=Name Subject is required');
+     }  else{
+              $sql = "SELECT * FROM `subjects` WHERE nameSubject = '$nameSubject'";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result)>0){
+                  header('location:createSubject.php?error=The subject already exists!');
+              }  else {
+                $sql = "INSERT INTO `subjects`(`nameSubject`) VALUES ('$nameSubject') ";
+                if(mysqli_query($conn,$sql)){
+                  $_SESSION['status'] = "Created subject successfully!";
+                  header('location:subject.php');
+                } else {
+                  echo "loi";
+                }
+              } 
+          }
  }
 ?>
 <!DOCTYPE html>
@@ -38,6 +46,11 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
             <form class="px-md-2" method="post">
+              <?php if(isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_GET['error']; ?>
+                </div>
+              <?php } ?>
               <div class="form-outline mb-4">
                 <label class="form-label" for="txtNameSubject">Name Subject</label>
                 <input type="text" id="txtNameSubject" class="form-control" name="nameSubject" />

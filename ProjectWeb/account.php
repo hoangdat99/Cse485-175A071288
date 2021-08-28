@@ -16,8 +16,19 @@
     <title>Account</title>
 </head>
 <body>
-    <?php include('./header/header.php') ?>
-
+    <?php 
+        include('./header/header.php');
+        if(isset($_SESSION['status'])){
+            echo'
+                <script language="javascript">
+                    setTimeout(function(){
+                        alert("'.$_SESSION['status'].'");
+                    }, 100);
+                </script>
+            ';
+            unset($_SESSION['status']);
+        }
+    ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
