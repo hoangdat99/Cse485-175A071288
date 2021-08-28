@@ -6,6 +6,8 @@ session_start();
      $passWord = $_POST['passWord'];
      $role =$_POST['role'] ;
      $status = 0;
+     $hash_passWord = password_hash($passWord, PASSWORD_DEFAULT);
+    //  var_dump($hash_passWord);
      if(empty($userName)){
        header('location:newAccount.php?error=User Name is required!');
      }  else if(empty($passWord)){
@@ -16,7 +18,7 @@ session_start();
       if(mysqli_num_rows($result)>0){
         header('location:newAccount.php?error=User Name already exists!');
       } else {
-           $sql = "INSERT INTO `users`(`useName`, `passWord`, `role`, `status`) VALUES ('$userName','$passWord','$role',$status) ";
+           $sql = "INSERT INTO `users`(`useName`, `passWord`, `role`, `status`) VALUES ('$userName','$hash_passWord','$role',$status) ";
            if(mysqli_query($conn,$sql)){
               $_SESSION['status'] = "Created account successfully!";
               header('location:account.php');
@@ -42,7 +44,7 @@ session_start();
     <title>Create new account</title>
 </head>
 <body>
-<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+<section class="h-100 h-auto" style="background-color: #8fc4b7;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-8 col-xl-6">

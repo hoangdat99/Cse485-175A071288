@@ -8,28 +8,36 @@
     $username = strip_tags($username);
 		$username = addslashes($username);
 		$password = strip_tags($password);
-		$password = addslashes($password);  
-    $sql = "SELECT * FROM users WHERE useName = '$userName' AND passWord='$passWord' ";
-    $result = mysqli_query($conn,$sql);
-    if (mysqli_num_rows($result) === 1){
-      $row = mysqli_fetch_assoc($result);  
-      $id = $row['id'];   
-      if($row['passWord'] === $passWord && $row['role']=='admin' && $role =='admin' && $row['status'] == 1){
-        $_SESSION['userName'] = $userName;
-        header('Location:admin.php');
-      }else if($row['passWord'] === $passWord && $row['role']=='teacher' && $role=='teacher' && $row['status'] == 1){
-        $_SESSION['userName'] = $userName;
-        header('Location:teacher.php');
-      }
-      else if($row['passWord'] === $passWord && $row['role']=='student' && $role=='student' && $row['status'] == 1){
-        $_SESSION['userName'] = $userName;
-        header('Location:sv.php');
-        } else if($row['passWord'] === $passWord && $row['status'] == 0){
-          $_SESSION['id'] = $id;
-          header('Location:createInfo.php');
+		$password = addslashes($password);
+    
+    if(empty($userName)){
+      header('location:login.php?error = User Name is required!');
+    } else if(empty($passWord)){
+      header('location:login.php?error = PassWord is required!');
+    } else {
+            $sql = "SELECT * FROM users WHERE useName = '$userName'";
+            $result = mysqli_query($conn,$sql);
+            if (mysqli_num_rows($result) === 1){
+              $row = mysqli_fetch_assoc($result);  
+              $id = $row['id'];   
+              if(password_verify($passWord , $row['passWord']) && $row['role']=='admin' && $role =='admin' && $row['status'] == 1){
+                $_SESSION['userName'] = $userName;
+                header('Location:admin.php');
+              }else if(password_verify($passWord , $row['passWord']) && $row['role']=='teacher' && $role=='teacher' && $row['status'] == 1){
+                $_SESSION['userName'] = $userName;
+                header('Location:teacher.php');
+              }
+              else if(password_verify($passWord , $row['passWord']) && $row['role']=='student' && $role=='student' && $row['status'] == 1){
+                $_SESSION['userName'] = $userName;
+                header('Location:sv.php');
+                } else if(password_verify($passWord , $row['passWord'])&& $row['status'] == 0){
+                  $_SESSION['id'] = $id;
+                  header('Location:createInfo.php');
+                }
+            }
         }
+
     }
-  }
 ?>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -40,12 +48,12 @@
 	<div class="row">
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
-        <?php if (isset($_GET['error'])) { ?>
-      	      <div class="alert alert-danger" role="alert">
-				  <?=$_GET['error']?>
-			  </div>
-			  <?php } ?>
 		    <form class="login-form" action="login.php" method="POST">
+              <?php if(isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_GET['error']; ?>
+                </div>
+              <?php } ?>
           <div class="form-group">
             <label for="exampleInputEmail1" class="text-uppercase" >Username</label>
             <input type="text" class="form-control"  name="userName">

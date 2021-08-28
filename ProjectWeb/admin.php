@@ -16,7 +16,7 @@
     <!-- ** header ** -->
         <?php include('./header/header.php') ?>
         <div class="container-fluid">
-            <div class="row admin">
+            <div class="row admin" style="margin-bottom:10px">
                 <div class="col-md-3">
                     <button class="control" >
                         <a href="account.php">Quản lý tài khoản</a>
@@ -38,6 +38,13 @@
                     </button>
                 </div>
             </div>    
+            <div class="row admin">
+                <div class="col-md-3">
+                    <button class="control">
+                        <a href="change.php">Thay đổi mật khẩu</a>
+                    </button>
+                </div>
+            </div>
         </div>
         <!-- ** footer** -->
 </body>

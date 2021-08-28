@@ -43,7 +43,7 @@
 </head>
 <body>
     <?php include('./header/header.php')?>
-<section class="h-200 h-custom" style="background-color: #8fc4b7;">
+<section class="h-200 h-auto" style="background-color: #8fc4b7;">
   <div class="container py-5 h-200">
     <div class="row d-flex justify-content-center align-items-center h-200">
       <div class="col-lg-8 col-xl-6">
