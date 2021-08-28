@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 20, 2021 lúc 10:18 AM
+-- Thời gian đã tạo: Th8 28, 2021 lúc 03:04 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -43,9 +43,7 @@ CREATE TABLE `info` (
 
 INSERT INTO `info` (`id`, `fullName`, `email`, `Code`, `image`, `phoneNumber`, `id_user`) VALUES
 (1, 'HoàngĐạt', 'hoangdatk95@gmail.com', 'HKGH777', 'des.jpg', '0917493396', 1),
-(6, 'Hoàng Đạt', 'nnga11340@gmail.com', '346145', 'imgEvent4.jpg', '0917493396', 2),
-(7, 'Hoàng Đạt', 'mrteenteen@yahoo.com.vn', 'HKGH999', 'imgEvent5.jpg', '0917493396', 14),
-(8, 'Hoàng Đạt', 'nnga11340@gmail.com', 'e8f9e4bgjihbg8gg', 'imgNotification1.jpg', '0917493396', 16);
+(6, 'Hoàng Đạt', 'nnga11340@gmail.com', '346145', 'imgEvent4.jpg', '0917493396', 2);
 
 -- --------------------------------------------------------
 
@@ -68,12 +66,13 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `setTime`, `content`, `image`, `status`, `user_id`) VALUES
-(1, 'Trường Đại học Phenikaa công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy theo phương thức xét điểm thi tốt nghiệp THPT năm 2021', '2021-08-17', 'Hội đồng Tuyển sinh Trường Đại học Phenikaa (PKA) công bố ngưỡng điểm nhận hồ sơ đăng ký xét tuyển (điểm sàn) đại học hệ chính quy năm 2021 vào từng ngành/chương trình theo phương thức xét điểm thi tốt nghiệp Trung học phổ thông', 'des.jpg', 0, 1),
-(9, 'Hội nhập thế giới2', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(10, 'Hội nhập thế giới3]', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(11, 'Hội nhập thế giới4', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(12, 'Hội nhập thế giới5', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1),
-(13, 'Hội nhập thế giới6', '2021-08-17', 'Hôm nay chúng tôi hội nhập thế giới', 'hloww.jpg', 0, 1);
+(1, 'Công thức và cách tính điểm xét tốt nghiệp THPT 2022 nhanh nhất, chính xác nhất', '2021-08-26', 'Bao nhiêu điểm thì đậu tốt nghiệp THPT và cách tính điểm xét tuyển như thế nào là câu hỏi được 2k3 quan tâm lúc này! Trường Đại học Phenikaa hướng dẫn thí sính cách tính điểm xét tốt nghiệp THPT 2021 cũng như một số điều kiện cần để được xét tốt nghiệp.', 'imgNotification1.jpg', 1, 1),
+(9, 'Thí sinh cần làm gì sau khi biết điểm thi tốt nghiệp THPT?', '2021-08-17', 'Hôm nay (26.7), các địa phương công bố kết quả thi tốt nghiệp THPT đợt 1 của gần 1 triệu thí sinh cả nước. Kết quả kỳ thi này vừa được dùng để xét công nhận tốt nghiệp, vừa xét tuyển vào các trường ĐH và CĐ.', 'thumbnail3.jpg', 1, 1),
+(10, 'Thông báo nhập học đợt 1 năm 2021', '2021-08-20', 'Thí sinh đã đạt kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và kết quả học tập bậc THPT (học bạ) đợt 1 năm 2021.', 'imgNotification4.jpg', 0, 1),
+(11, 'Trường Đại học Phenikaa nhận hồ sơ xét tuyển học bạ đợt 2 năm 2021', '2021-08-17', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo nhận hồ sơ xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức kết quả học tập bậc THPT (Học bạ) đợt 2 năm 2021 như sau:', 'news2.jpg', 0, 1),
+(12, 'Trường Đại học Phenikaa công bố kết quả xét tuyển đợt 2 năm 2021 theo phương thức xét tuyển kết quả học tập THPT (học bạ)', '2021-08-17', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và theo phương thức kết quả học tập bậc THPT (Học bạ)', 'news13.jpg', 0, 1),
+(13, 'Công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy theo phương thức xét điểm thi tốt nghiệp THPT năm 2021', '2021-08-17', 'Hội đồng Tuyển sinh Trường Đại học Phenikaa (PKA) công bố ngưỡng điểm nhận hồ sơ đăng ký xét tuyển (điểm sàn) đại học hệ chính quy năm 2021 vào từng ngành/chương trình theo phương thức xét điểm thi tốt nghiệp Trung học phổ thông (THPT) năm 2021 như sau:', 'imgNotification2.jpg', 1, 1),
+(14, 'Tuổi trẻ hôm nay - Tiến bước mai sau', '2021-08-26', 'Hội đồng tuyển sinh Trường Đại học Phenikaa (PKA) thông báo kết quả xét tuyển đại học hệ chính quy các ngành/chương trình đào tạo (CTĐT) theo phương thức tuyển thẳng và theo phương thức kết quả học tập bậc THPT (Học bạ)', 'news5.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +102,7 @@ INSERT INTO `scores` (`id`, `score`, `id_subject`, `id_user`) VALUES
 
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
-  `nameSubject` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `nameSubject` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -111,7 +110,11 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `nameSubject`) VALUES
-(1, 'Math');
+(1, 'Tiếng anh 3'),
+(4, 'English 3'),
+(26, 'Math 3'),
+(29, 'English'),
+(31, 'Văn');
 
 -- --------------------------------------------------------
 
@@ -132,23 +135,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `useName`, `passWord`, `role`, `status`) VALUES
-(1, 'admin', 'admin', 'admin', 1),
-(2, 'user1', '123456', 'admin', 1),
-(3, 'user2', '123457', 'teacher', 1),
-(14, 'hocsinh12', '123456', 'Student', 1),
-(16, 'user3', '123456', 'student', 1);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `work`
---
-
-CREATE TABLE `work` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_user` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+(1, 'admin', '$2y$10$KCwoHiMsKKL2rpyc0g8wTuzPGg3whA19Bul/W/UQD0KzvkBaBj.bK', 'admin', 1),
+(2, 'user1', '$2y$10$pfP6RZ3uHFL0KgEqahdzoujrHEJI2nysjMKyJ95UmEdMKUD1//n.C', 'admin', 1),
+(14, 'hocsinh12', '$2y$10$5oLWdd.vqmKIqU5FrKhElO8dAV2hI1u6pHTX.B4UEayzDaDrbcVrG', 'Student', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -189,13 +178,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `work`
---
-ALTER TABLE `work`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_user` (`id_user`);
-
---
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -203,13 +185,13 @@ ALTER TABLE `work`
 -- AUTO_INCREMENT cho bảng `info`
 --
 ALTER TABLE `info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `scores`
@@ -221,19 +203,13 @@ ALTER TABLE `scores`
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT cho bảng `work`
---
-ALTER TABLE `work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -243,7 +219,7 @@ ALTER TABLE `work`
 -- Các ràng buộc cho bảng `info`
 --
 ALTER TABLE `info`
-  ADD CONSTRAINT `info_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `info_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `news`
@@ -256,13 +232,7 @@ ALTER TABLE `news`
 --
 ALTER TABLE `scores`
   ADD CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`id_subject`) REFERENCES `subjects` (`id`),
-  ADD CONSTRAINT `scores_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
-
---
--- Các ràng buộc cho bảng `work`
---
-ALTER TABLE `work`
-  ADD CONSTRAINT `work_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `scores_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
