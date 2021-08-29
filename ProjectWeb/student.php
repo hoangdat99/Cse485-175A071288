@@ -18,17 +18,12 @@
 <body>
     <div class="container-fluid">
         <div class="row" style="margin-top:15px; margin-bottom:15px"> 
-            <div class="col-md-4">
-                <button class="btn btn-primary">
-                    <a href="createScore.php" class="text-light">Thêm mới điểm</a>
-                </button>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <button class="btn btn-primary">
                     <a href="change.php" class="text-light">Thay Đổi mật khẩu</a>
                 </button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <button class="btn btn-danger">
                     <a href="logout.php" class="text-light">LogOut</a>
                 </button>
@@ -39,35 +34,26 @@
    <table class="table">
     <thead>
         <tr>
-            <th scope ="col">ID</th>
-            <th scope="col">Name Student</th>
-            <th scope="col">Code</th>
-            <th scope="col">Name Subject</th>
-            <th scope="col">Score</th>
-            <th scope="col">Action</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name Subject</th>
+        <th scope="col">Score</th>
         </tr>
     </thead>
     <tbody>
         <?php   
-            include('connect.php');        
-            $sql = "SELECT scores.id, scores.score, subjects.nameSubject, info.fullName, info.Code FROM scores INNER JOIN subjects INNER JOIN info WHERE scores.id_subject = subjects.id AND scores.id_user = info.id_user";
+            include('connect.php');    
+            $id = $_SESSION['id'];     
+            $sql = "SELECT * FROM scores INNER JOIN subjects WHERE scores.id_subject = subjects.id AND scores.id_user = $id";
             $result = mysqli_query($conn,$sql);
             if($result){
                while( $row = mysqli_fetch_assoc($result)){
                    $id = $row['id'];
-                   $fullName= $row['fullName'];
-                   $code=$row['Code'];
                    $name = $row['nameSubject'];
                    $score = $row['score'];
                    echo '<tr>
                         <td>'.$id.'</td>
-                        <td>'.$fullName.'</td>
-                        <td>'.$code.'</td>
                         <td>'.$name.'</td>
                         <td>'.$score.'</td>
-                        <td>
-                            <button class="btn btn-danger"><a href="deleteScore.php ? deleteid='.$id.' " class="text-light">Delete</a></button>
-                        </td>
                    </tr>';
                }
             }         

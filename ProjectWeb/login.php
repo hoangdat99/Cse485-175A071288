@@ -29,7 +29,8 @@
               }
               else if(password_verify($passWord , $row['passWord']) && $row['role']=='student' && $role=='student' && $row['status'] == 1){
                 $_SESSION['userName'] = $userName;
-                header('Location:sv.php');
+                $_SESSION['id']= $id;
+                header('Location:student.php');
                 } else if(password_verify($passWord , $row['passWord'])&& $row['status'] == 0){
                   $_SESSION['id'] = $id;
                   header('Location:createInfo.php');
