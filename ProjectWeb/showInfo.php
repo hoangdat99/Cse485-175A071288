@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +13,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Information</title>
+    <title>Thông tin</title>
 </head>
 <body>
   <?php 
-        include('./header/header.php');
+        
         include('connect.php');
         $id=$_GET['infoid'];
         $sql= "SELECT * FROM `info` Where id_user='$id'" ;
@@ -28,7 +31,7 @@
                 $phone = $row['phoneNumber'];
               echo '
  
-<section class="h-100 h-auto" style="background-color: #8fc4b7;">
+<section class="h-auto h-auto" style="background-color: #8fc4b7;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-8 col-xl-6">
@@ -56,7 +59,7 @@
                 <label class="form-label" for="txtPhone">Phone : </label>
                 <label>'.$phone.'</label>
               </div><br>
-              <button class="btn btn-primary"><a href="updateInfo.php ? infoid='.$id.' " class="text-light">Edit</a></button>                    
+              <button class="btn btn-primary"><a href="updateInfo.php ? infoid='.$id.' " class="text-light">Sửa</a></button>                    
             </form>
           </div>
         </div>

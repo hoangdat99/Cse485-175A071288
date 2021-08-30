@@ -39,7 +39,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Create new account</title>
+    <title>Cập nhật bài viết</title>
 </head>
 <body>
 <section class="h-100 h-auto" style="background-color: #8fc4b7;">
@@ -49,31 +49,31 @@
         <div class="card rounded-3">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img3.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Post</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Bài viết</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtPost">Title</label>
+                <label class="form-label" for="txtPost">Tiêu đề</label>
                 <?php
                   echo "<textarea rows=\"3\" type=\"text\" id=\"txtPost\" class=\"form-control\" name=\"title\">$title</textarea";
                 ?>
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtTime">Time</label>
+                <label class="form-label" for="txtTime">Thời gian</label>
                 <input type="date" id="txtTime" class="form-control" name="time" value=<?php  echo json_encode($time); ?>>
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtContent">Content</label>
+                <label class="form-label" for="txtContent">Nội dung</label>
                 <?php
                    echo "<textarea rows=\"6\" type=\"text\" id=\"txtContent\" class=\"form-control\" name=\"content\">$content</textarea>";
                 ?> 
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtImage">Image</label>
+                <label class="form-label" for="txtImage">Ảnh</label>
                 <input type="file" id="txtImage" class="form-control" name="image" >
                     <img src="./images/"<?php echo $image; ?> alt="">
                 </input>
               </div>
-              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Update</button>
+              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Cập Nhật</button>
             </form>
           </div>
         </div>

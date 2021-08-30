@@ -66,12 +66,11 @@
                 <li><a href="#" class="menuRightItem"><img src="./images/vn.jpg" class="language"></a></li>
                 <li><a href="#" class="menuRightItem"><img src="./images/en.png" class="language"></a></li>
                 <button type="button" class="btn btn-secondary"><a href="login.php">
-                    <?Php
-                       
+                    <?Php   
                         if(isset($_SESSION['userName'])){
                             echo $_SESSION['userName'];
                         } else {
-                             echo "Login";
+                             echo "Đăng nhập";
                         }
                     
                     ?></a></button>
@@ -154,7 +153,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Tuyển sinh</a>
+                    <a href="admissionPage.php">Tuyển sinh</a>
                     <div class="menuRight-down0">
                         <span class="menuRight-name">Tuyển sinh</span>
                     <div class="row menuRight-item">

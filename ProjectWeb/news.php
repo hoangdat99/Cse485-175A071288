@@ -1,5 +1,11 @@
 <?php 
     include('connect.php');
+    include('./header/header.php');
+    if(isset($_GET['postid'])){
+        $id_category = $_GET['postid']; 
+    }   else {
+        $id_category =1;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,29 +22,23 @@
     <title>Tin tức - Thông báo</title>
 </head>
 <body>
-    <?php include('./header/header.php')?>
 <div class="container-fluid ctn-mainNews">
         <div class="row paths">
             <div class="col-md-12 path">
                 <h5>Trang chủ / </h5>
-                <p class="text-warning"> Tin tức - Thông báo</p>
+                <p class="text-warning">Tin Tức</p>
             </div>
         </div>
         <div class="row mainNews">
-            <div class="col-md-8 mainNewsLeft">
-                <h5 class="titleMainNews">Tin tức</h5>
+        <div class="col-md-8 mainNewsLeft">
+                <h5 class="titleMainNews">Tin Tức</h5>
                 <div class="hrNews">
                     <hr class="hrNews1">
                     <hr class="hrNews2">
                 </div>
-                <?php 
-                    $item_page = !empty($_GET['per_page'])?$_GET['per_page']:3;
-                    $current_page = !empty($_GET['page'])?$_GET['page']:1;
-                    $offset = ($current_page -1) * $item_page;
-                    $sql = "SELECT * FROM `news` WHERE status =1 ORDER BY `id` DESC LIMIT ".$item_page." OFFSET ".$offset."";
-                    $totalRecord = mysqli_query($conn, "SELECT * FROM `news`");
-                    $totalRecord = $totalRecord->num_rows;
-                    $totalPage = ceil($totalRecord/$item_page);
+                <?php
+                          
+                    $sql = "SELECT * FROM `news` WHERE status =1 AND news.id_category = $id_category ORDER BY `id` DESC LIMIT 6";
                     $result = mysqli_query($conn,$sql);
                     if($result){
                         while ($row = mysqli_fetch_assoc($result)){
@@ -64,24 +64,31 @@
                         }
                     }   
                 ?>   
-                <?php include('pagination.php') ?>    
-            </div>
+            </div> 
             <div class="col-md-3 mainNewsRight">
             <h5 class="titleMainNewsRight">Danh Mục</h5>
                 <div class="hrNewsRight">
                     <hr class="hrNews1">
                     <hr class="hrNews2">
                 </div>
-                <ul class="ulMainNews">
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Tin tuyển sinh</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Tuyển sinh đại học chính quy</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Tuyển sinh đại học liên thông</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Tuyển sinh sau đại học</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Chương trình đào tạo</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Mẫu phiếu đăng ký xét tuyển</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Tại sao chọn Phenikaa</a></li>
-                    <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="">Thông báo tuyển sinh</a></li>
-                </ul>
+                    <?php 
+                            $sql = "SELECT * FROM `category`";
+                            $result = mysqli_query($conn,$sql);
+                            if($result){
+                                while($row = mysqli_fetch_assoc($result)){
+                                    $categoryName = $row['categoryName'];
+                                    $id_category = $row['id'];
+                                    $_SESSION['categoryName']= $categoryName;
+                                    $_SESSION['id']= $id_category;
+                                    echo'
+                                        <ul class="ulMainNews">
+                                            <li class="liMainNews"><i class="fas fa-hand-point-right"></i><a href="news.php ? postid='.$id_category.'">'.$categoryName.'</a></li>  
+                                         </ul>
+                                    ';
+                                }
+                            }
+                    ?>
+                
             </div>
         </div>
     </div>

@@ -35,7 +35,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Create new account</title>
+    <title>Cập nhật tài khoản</title>
 </head>
 <body>
 <section class="h-100 h-auto" style="background-color: #8fc4b7;">
@@ -45,25 +45,25 @@
         <div class="card rounded-3">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img3.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thông tin tài khoản</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
+                <label class="form-label" for="txtUserName">Tên đăng nhập</label>
                 <input type="text" id="txtUserName" class="form-control" name="useName" value=<?php echo  json_encode($userName); ?>>
-                <label class="form-label" for="txtUserName">UserName</label>
               </div>
               <div class="form-outline mb-4">
-                <input type="text" id="txtPassWord" class="form-control" name="passWord" value=<?php echo  json_encode($passWord);?>>
-                <label class="form-label" for="txtPassWord">PassWord</label>
+                <label class="form-label" for="txtPassWord">Mật khẩu</label>
+                <input type="password" id="txtPassWord" class="form-control" name="passWord" value=<?php echo  json_encode($passWord);?>>
               </div>
               <div class="mb-4">
                 <select class="select" name="role" value=<?php echo $role; ?>>
-                  <option value="none" disabled>Role</option>
-                  <option value="Admin">Admin</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Student">Student</option>
+                  <option value="none" disabled>Quyền</option>
+                  <option value="admin">Admin</option>
+                  <option value="teacher">Giảng viên</option>
+                  <option value="student">Học sinh</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Update</button>
+              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Cập nhật</button>
             </form>
           </div>
         </div>
