@@ -29,7 +29,8 @@
               }
               else if(password_verify($passWord , $row['passWord']) && $row['role']=='student' && $role=='student' && $row['status'] == 1){
                 $_SESSION['userName'] = $userName;
-                header('Location:sv.php');
+                $_SESSION['id']= $id;
+                header('Location:student.php');
                 } else if(password_verify($passWord , $row['passWord'])&& $row['status'] == 0){
                   $_SESSION['id'] = $id;
                   header('Location:createInfo.php');
@@ -47,7 +48,7 @@
     <div class="container">
 	<div class="row">
 		<div class="col-md-4 login-sec">
-		    <h2 class="text-center">Login Now</h2>
+		    <h2 class="text-center">Đăng nhập</h2>
 		    <form class="login-form" action="login.php" method="POST">
               <?php if(isset($_GET['error'])) { ?>
                 <div class="alert alert-danger" role="alert">
@@ -55,26 +56,26 @@
                 </div>
               <?php } ?>
           <div class="form-group">
-            <label for="exampleInputEmail1" class="text-uppercase" >Username</label>
+            <label for="exampleInputEmail1" class="text-uppercase" >Tài khoản</label>
             <input type="text" class="form-control"  name="userName">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1" class="text-uppercase" >Password</label>
+            <label for="exampleInputPassword1" class="text-uppercase" >Mật khẩu</label>
             <input type="password" class="form-control"name="passWord">
           </div>
           <div class="mb-1">
-            <label for="">Select your type:</label>
+            <label for="">Quyền của bạn:</label>
           </div>
           <div class="mb-4">
                 <select class="select" name="role">
-                  <option value="none" disabled>Your type</option>
+                  <option value="none" disabled>Quyền</option>
                   <option value="admin">Admin</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student">Student</option>
+                  <option value="teacher">Giảng viên</option>
+                  <option value="student">Học sinh</option>
                 </select>
               </div>
             <div class="form-check">
-            <button type="submit" name="submit" class="btn btn-login float-right">Submit</button>
+            <button type="submit" name="submit" class="btn btn-login float-right">Đăng nhập</button>
           </div>
           
         </form>

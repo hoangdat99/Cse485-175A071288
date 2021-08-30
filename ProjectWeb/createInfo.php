@@ -33,7 +33,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Create Information</title>
+    <title>Điền thông tin</title>
 </head>
 <body>
     <section class="h-100 h-auto" style="background-color: #8fc4b7;">
@@ -42,10 +42,10 @@
       <div class="col-lg-8 col-xl-6">
         <div class="card rounded-3">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Your Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thông tin của bạn</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtFullName">FullName :</label>
+                <label class="form-label" for="txtFullName">Họ tên :</label>
                 <input type="text" id="txtFullName" class="form-control" name="fullName" />
               </div>
               <div class="form-outline mb-4">
@@ -53,18 +53,18 @@
                 <input type="email" id="txtEmail" class="form-control" name="email">
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtCode">Code :</label>
+                <label class="form-label" for="txtCode">Mã số :</label>
                 <input type="text" id="txtCode" class="form-control" name="code">
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtImage">Image</label>
+                <label class="form-label" for="txtImage">Ảnh</label>
                 <input type="file" class="form-control" name="image">
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtPhone">Phone : </label>
+                <label class="form-label" for="txtPhone">Số điện thoại : </label>
                 <input type="text" id="txtPhone" class="form-control" name="phone">
               </div><br>  
-              <button class="btn btn-primary" name="submit">Submit</button>
+              <button class="btn btn-primary" name="submit">Xác nhận</button>
             </form>
           </div>
         </div>

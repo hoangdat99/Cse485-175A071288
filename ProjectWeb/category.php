@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-6">
                 <button class="addAccount">
-                    <a href="newAccount.php" class="text-decoration-none">Tạo tài khoản mới</a>
+                    <a href="createCategory.php" class="text-decoration-none">Tạo danh mục mới</a>
                 </button>
             </div>
             <div class="col-md-6">
@@ -42,38 +42,29 @@
                 </button>
             </div>
         </div>
+        
 <table class="table">
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">Tên tài khoản</th>
-        <th scope="col">Mật khẩu</th>
-        <th scope ="col">Trạng thái</th>
-        <th scope="col">Quyền</th>
+        <th scope="col">Tên danh mục</th>
         <th scope="col">Tác vụ</th>
         </tr>
     </thead>
     <tbody>
         <?php 
-            $sql = "SELECT * FROM `users`";
+            $sql = "SELECT * FROM `category`";
             $result = mysqli_query($conn,$sql);
             if($result){
                while( $row = mysqli_fetch_assoc($result)){
                    $id = $row['id'];
-                   $useName = $row['useName'];
-                   $passWord = $row['passWord'];
-                   $status = $row['status'];
-                   $role = $row['role'];
+                   $categoryName = $row['categoryName'];
                    echo '<tr>
                         <td>'.$id.'</td>
-                        <td>'.$useName.'</td>
-                        <td>'.$passWord.'</td>
-                        <td>'.$status.'</td>
-                        <td>'.$role.'</td>
+                        <td>'.$categoryName.'</td>
                         <td>
-                        <button class="btn btn-primary"><a href="updateAccount.php ? updateid='.$id.'" class="text-light">Sửa</a></button>
-                        <button class="btn btn-danger"><a href="deleteAccount.php ? deleteid='.$id.' " class="text-light">Xóa</a></button>
-                        <button class="btn btn-primary"><a href="showInfo.php ? infoid='.$id.' " class="text-light">Thông tin</a></button>                  
+                        <button class="btn btn-primary"><a href="updateCategory.php ? updateid='.$id.'" class="text-light">Sửa</a></button>
+                        <button class="btn btn-danger"><a href="deleteCategory.php ? deleteid='.$id.' " class="text-light">Xóa</a></button>
                     </td>
                    </tr>';
                }

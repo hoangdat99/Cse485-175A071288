@@ -44,7 +44,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Create Information</title>
+    <title>Đổi mật khẩu</title>
 </head>
 <body>
     <section class="h-100 h-auto" style="background-color: #8fc4b7;">
@@ -53,25 +53,25 @@
       <div class="col-lg-8 col-xl-6">
         <div class="card rounded-3">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Change Your PassWord</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thay đổi mật khẩu</h3>
             <form class="px-md-2" method="post">
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtUserName">UserName :</label>
+                <label class="form-label" for="txtUserName">Tên đăng nhập :</label>
                 <input type="text" id="txtUserName" class="form-control" name="userName" />
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtPwn">PassWord Now :</label>
+                <label class="form-label" for="txtPwn">Mật khẩu hiện tại :</label>
                 <input type="password" id="txtPwn" class="form-control" name="pwn">
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtNpw">New PassWord :</label>
+                <label class="form-label" for="txtNpw">Mật khẩu mới :</label>
                 <input type="password" id="txtNpw" class="form-control" name="npw">
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtCpw">Confirm PassWord : </label>
+                <label class="form-label" for="txtCpw">Xác nhận mật khẩu mới : </label>
                 <input type="password" id="txtCpw" class="form-control" name="cpw">
               </div><br>  
-              <button class="btn btn-primary" name="submit">Submit</button>
+              <button class="btn btn-primary" name="submit">Xác nhận</button>
             </form>
           </div>
         </div>

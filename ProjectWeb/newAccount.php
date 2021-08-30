@@ -41,7 +41,7 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/5f58258f46.js"crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <title>Create new account</title>
+    <title>Tạo tài khoản mới</title>
 </head>
 <body>
 <section class="h-100 h-auto" style="background-color: #8fc4b7;">
@@ -51,7 +51,7 @@ session_start();
         <div class="card rounded-3">
           <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img3.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Info</h3>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Thông tin tài khoản</h3>
             <form class="px-md-2" method="post">
             <?php if(isset($_GET['error'])) { ?>
                 <div class="alert alert-danger" role="alert">
@@ -59,22 +59,22 @@ session_start();
                 </div>
               <?php } ?>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtUserName">UserName</label>
+                <label class="form-label" for="txtUserName">Tên đăng nhập</label>
                 <input type="text" id="txtUserName" class="form-control" name="useName" />
               </div>
               <div class="form-outline mb-4">
-                <label class="form-label" for="txtPassWord">PassWord</label>
+                <label class="form-label" for="txtPassWord">Mật khẩu</label>
                 <input type="text" id="txtPassWord" class="form-control" name="passWord"/>
               </div>
               <div class="mb-4">
                 <select class="select" name="role">
-                  <option value="none" disabled>Role</option>
+                  <option value="none" disabled>Quyền</option>
                   <option value="admin">Admin</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student">Student</option>
+                  <option value="teacher">Giảng viên</option>
+                  <option value="student">Học sinh</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Submit</button>
+              <button type="submit" class="btn btn-success btn-lg mb-1" name="submit">Xác nhận</button>
             </form>
           </div>
         </div>
